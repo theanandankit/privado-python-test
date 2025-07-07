@@ -9,22 +9,6 @@ BeautifulSoup4>=4.9.0
 requests[security,socks]>=2.28.0,<3.0.0
 cryptography[ssh]~=38.0.0
 Django[argon2]==3.2.0
-# Issue 3: Git-based dependencies
-# Package name extraction from git URLs is complex
-git+https://github.com/django/django.git@stable/3.2.x#egg=Django
-git+ssh://git@github.com/pyca/cryptography.git@main#egg=cryptography
-git+https://github.com/psf/requests.git@v2.28.0#egg=requests
-# Issue 4: Local file dependencies
-# Package name from file paths is hard to extract
-file:///local/packages/my-crypto-lib-1.0.tar.gz
-./vendor/internal-security-tools-2.1.0.whl
-../shared/company-auth-module/
-# Issue 5: URL-based dependencies
-# Direct URLs make package name extraction difficult
-https://files.pythonhosted.org/packages/source/c/cryptography/cryptography-38.0.0.tar.gz
-https://github.com/pallets/flask/archive/2.2.2.zip
-# Issue 6: Environment markers and platform specifications
-# Complex conditionals might interfere with line matching
 pywin32==301; sys_platform == 'win32'
 pycryptodome>=3.15.0; platform_machine != 'i386'
 tensorflow>=2.10.0; python_version >= '3.8'
